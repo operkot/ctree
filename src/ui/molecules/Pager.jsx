@@ -48,8 +48,8 @@ export const Pager = () => {
         </PagerControl>
       </Link>
 
-      <Link to={PATHS.FINAL_LOTTERY}>
-        <PagerControl isActive={pathname === PATHS.FINAL_LOTTERY}>
+      <Link to={PATHS.FINAL_DRAW}>
+        <PagerControl isActive={pathname === PATHS.FINAL_DRAW}>
           Финальный
         </PagerControl>
       </Link>

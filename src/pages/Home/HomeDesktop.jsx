@@ -25,7 +25,7 @@ export const HomeDesktop = () => (
         </Button>
       </Link>
 
-      <Link to={PATHS.FINAL_LOTTERY}>
+      <Link to={PATHS.FINAL_DRAW}>
         <Button variant="primary" w="100%" py="18px" fontSize="24px">
           Финальный розыгрыш
         </Button>

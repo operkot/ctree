@@ -29,10 +29,10 @@ export const CODES_MOBILE_LAYOUT_BACKGROUND = {
 
 export const CODES_DESKTOP_LAYOUT_BACKGROUND = {
   backgroundImage:
-    'url(img/codes_bg_desktop.svg), url(img/snow_bg_desktop.svg), url(img/rays_bg_desktop.svg)',
-  backgroundPosition: '0 100%, 42px 0, 50% 68%',
-  backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
-  backgroundSize: 'contain, contain, 2492px 2492px',
+    'url(img/codes_bg_desktop.svg), url(img/snow_bg_desktop.svg), url(img/rays_bg_desktop.svg), linear-gradient(8.17deg, #7BB7AC -15.22%, #7BB7AC 5.97%, #B9DBD5 68.57%, #C6E0DC 79.49%)',
+  backgroundPosition: '0 100%, 42px 0, 50% 64%, 0 0',
+  backgroundRepeat: 'no-repeat, no-repeat, no-repeat, no-repeat',
+  backgroundSize: 'contain, contain, 2492px 2492px, contain',
 }
 
 export const RULES_LAYOUT_BACKGROUND = {

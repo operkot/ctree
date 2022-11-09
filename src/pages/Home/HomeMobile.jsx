@@ -41,7 +41,7 @@ export const HomeMobile = () => {
             </Button>
           </Link>
 
-          <Link to={PATHS.FINAL_LOTTERY}>
+          <Link to={PATHS.FINAL_DRAW}>
             <Button
               as="span"
               variant="primary"

@@ -5,12 +5,15 @@ import { Box, Text } from 'ui/atoms'
 
 const CodeListWrapper = styled(Box)`
   display: flex;
-  max-height: 100%;
   overflow: hidden;
   border: 2px dashed #fff;
   border-radius: 16px;
   background-color: rgba(46, 154, 135, 0.3);
 `
+
+CodeListWrapper.defaultProps = {
+  maxHeight: '100%',
+}
 
 const CodesListBody = styled.ul`
   flex-grow: 1;

@@ -10,6 +10,7 @@ const LayoutDesktopWrapper = styled(Box)`
 `
 
 const LayoutDesktopContent = styled(Container)`
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-grow: 1;

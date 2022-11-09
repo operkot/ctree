@@ -1,4 +1,4 @@
-export * from './FinalLottery'
+export * from './FinalDraw'
 export * from './Home'
 export * from './Maps'
 export * from './MapView'

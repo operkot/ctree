@@ -4,5 +4,5 @@ export const PATHS = {
   MAPS: '/maps',
   MAP_VIEW: '/map-view',
   WEEKLY_LOTTERY: '/weekly-lottery',
-  FINAL_LOTTERY: '/final-lottery',
+  FINAL_DRAW: '/final-draw',
 }

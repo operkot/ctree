@@ -27,7 +27,7 @@ const FINAL_CODES = [
   },
 ]
 
-export const FinalLottery = () => (
+export const FinalDrawMobile = () => (
   <LayoutMobile {...CODES_MOBILE_LAYOUT_BACKGROUND}>
     <LayoutMobile.Header>
       <Box
