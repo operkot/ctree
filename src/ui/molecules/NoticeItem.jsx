@@ -15,6 +15,7 @@ const NoticeItemWrapper = styled.div`
 
 const NoticeItemDispaly = styled.div`
   position: relative;
+  /* z-index: 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,6 +54,18 @@ const NoticeItemDispaly = styled.div`
       width: 84px;
       height: 84px;
     }
+
+    ${props =>
+      props.size === 'lg' &&
+      css`
+        width: 90px;
+        height: 90px;
+
+        &:after {
+          width: 95px;
+          height: 95px;
+        }
+      `}
   }
 
   ${props =>
@@ -110,9 +123,16 @@ const NoticeItemDispaly = styled.div`
     `}
 `
 
-export const NoticeItem = ({ variant, title, subtitle, caption, ...props }) => (
+export const NoticeItem = ({
+  variant,
+  size,
+  title,
+  subtitle,
+  caption,
+  ...props
+}) => (
   <Box {...props}>
-    <NoticeItemDispaly variant={variant}>
+    <NoticeItemDispaly variant={variant} size={size}>
       <Text
         fontSize={{ _: '40px', lg: '46px' }}
         fontWeight="700"

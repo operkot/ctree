@@ -10,11 +10,13 @@ const LayoutDesktopWrapper = styled(Box)`
 `
 
 const LayoutDesktopContent = styled(Container)`
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   min-width: 0;
   min-height: 0;
   padding-top: 52px;
-  padding-bottom: 16px;
+  padding-bottom: 170px;
 `
 
 export const LayoutDesktop = ({ children, ...props }) => (

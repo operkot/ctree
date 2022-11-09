@@ -1,23 +1,21 @@
-import { Link } from 'react-router-dom'
-
 import { CODES_MOBILE_LAYOUT_BACKGROUND } from 'constants/backgrounds'
-import { PATHS } from 'routing/paths'
-import { Button, Box, Text } from 'ui/atoms'
+import { Box, Text } from 'ui/atoms'
 import { Pager } from 'ui/molecules'
 import { LayoutMobile } from 'ui/layout'
 import { CodeList } from 'ui/organisms'
 
-const FINAL_CODES = [
+const WEEKLY_CODES = [
   {
+    week: '31 мая - 6 июня',
     coupons: [
       { code: '1234 5678' },
       { code: '1234 5678' },
       { code: '1234 5678' },
-      { code: '1234 5678' },
-      { code: '1234 5678' },
-      { code: '1234 5678' },
-      { code: '1234 5678' },
-      { code: '1234 5678' },
+    ],
+  },
+  {
+    week: '24 - 30 мая',
+    coupons: [
       { code: '1234 5678' },
       { code: '1234 5678' },
       { code: '1234 5678' },
@@ -27,7 +25,7 @@ const FINAL_CODES = [
   },
 ]
 
-export const FinalLottery = () => (
+export const WeeklyLotteryMobile = () => (
   <LayoutMobile {...CODES_MOBILE_LAYOUT_BACKGROUND}>
     <LayoutMobile.Header>
       <Box
@@ -55,13 +53,7 @@ export const FinalLottery = () => (
     </LayoutMobile.Header>
 
     <LayoutMobile.Content>
-      <CodeList codes={FINAL_CODES} mb="28px" />
-
-      <Link to={PATHS.MAPS}>
-        <Button variant="primary" w="100%" py="13px">
-          Заполнить карту
-        </Button>
-      </Link>
+      <CodeList codes={WEEKLY_CODES} />
     </LayoutMobile.Content>
   </LayoutMobile>
 )

@@ -15,6 +15,7 @@ export const HomeDesktop = () => (
       src="img/main_title_img.svg"
       alt="Участвуй в рохыгрышах"
       mb="42px"
+      maxWidth="404px"
     />
 
     <Box maxWidth="400px">
@@ -26,7 +27,7 @@ export const HomeDesktop = () => (
 
       <Link to={PATHS.FINAL_LOTTERY}>
         <Button variant="primary" w="100%" py="18px" fontSize="24px">
-          Еженедельный розыгрыш
+          Финальный розыгрыш
         </Button>
       </Link>
     </Box>
