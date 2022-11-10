@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 import api from 'api'
-import { BASE_ERROR_MESSAGE } from 'constants/error'
+import { BASE_ERROR_MESSAGE } from 'constants/messages'
 
 const initialState = {
   data: {

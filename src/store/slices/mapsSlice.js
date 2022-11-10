@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { BASE_ERROR_MESSAGE } from 'constants/error'
+import { BASE_ERROR_MESSAGE } from 'constants/messages'
 import api from 'api'
 
 const MAPS_MOCK = [
