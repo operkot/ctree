@@ -16,7 +16,7 @@ const LayoutDesktopContent = styled(Container)`
   flex-grow: 1;
   min-width: 0;
   min-height: 0;
-  padding-top: 52px;
+  padding-top: 32px;
   padding-bottom: 170px;
 `
 

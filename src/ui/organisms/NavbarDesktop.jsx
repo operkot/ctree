@@ -35,8 +35,9 @@ export const NavbarDesktop = () => {
         )}
 
         <Flex>
-          <Box as="img" src="img/spar-logo.svg" alt="Spar" mr="48px" />
-          <Box as="img" src="img/semya-logo.svg" alt="Семья" />
+          <Box as="img" src="img/spar_logo.svg" alt="Spar" mr="48px" />
+          <Box as="img" src="img/semya_logo.svg" alt="Семья" mr="38px" />
+          <Box as="img" src="img/pobeda_logo.svg" alt="Победа" />
         </Flex>
 
         <NavbarDesktopMenu />

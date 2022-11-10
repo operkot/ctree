@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from 'ui/atoms'
 import { ChipsCarousel } from './ChipsCarousel'
 
-export const ChipsBox = ({ avaibleChips = 0 }) => {
+export const ChipsBox = ({ availableChips = 0 }) => {
   return (
     <Box pt="16px" pb="28px">
       <Flex as="header" justifyContent="space-between" mb="12px" px="12px">
@@ -9,11 +9,11 @@ export const ChipsBox = ({ avaibleChips = 0 }) => {
           Фишки
         </Text>
         <Text fontSize="16px" lineHeight="22px" color="#fff">
-          Всего {avaibleChips}
+          Всего {availableChips}
         </Text>
       </Flex>
 
-      <ChipsCarousel avaibleChips={avaibleChips} />
+      <ChipsCarousel availableChips={availableChips} />
     </Box>
   )
 }

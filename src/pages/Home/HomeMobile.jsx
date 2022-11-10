@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 
 import { PATHS } from 'routing/paths'
-import { MAIN_MOBILE_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { HOME_MOBILE_BACKGROUND } from 'constants/backgrounds'
 import { Box, Button } from 'ui/atoms'
 import { Notice } from 'ui/organisms'
 import { LayoutMobile } from 'ui/layout'
 
 export const HomeMobile = () => {
   return (
-    <LayoutMobile {...MAIN_MOBILE_LAYOUT_BACKGROUND}>
+    <LayoutMobile {...HOME_MOBILE_BACKGROUND}>
       <LayoutMobile.Content>
         <Notice mb={{ _: '20px', md: '28px' }} />
 

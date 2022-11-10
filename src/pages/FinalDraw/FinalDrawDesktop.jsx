@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { PATHS } from 'routing/paths'
-import { CODES_DESKTOP_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { FINAL_DRAW_DESKTOP_BACKGROUND } from 'constants/backgrounds'
 import { Box, Button, Text } from 'ui/atoms'
 import { LayoutDesktop } from 'ui/layout'
 import { CodeList } from 'ui/organisms'
@@ -27,7 +27,7 @@ const FINAL_CODES = [
 ]
 
 export const FinalDrawDesktop = () => (
-  <LayoutDesktop {...CODES_DESKTOP_LAYOUT_BACKGROUND}>
+  <LayoutDesktop {...FINAL_DRAW_DESKTOP_BACKGROUND}>
     <Box
       w="100%"
       maxWidth="122px"

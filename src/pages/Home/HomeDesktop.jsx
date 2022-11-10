@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 
 import { PATHS } from 'routing/paths'
-import { HOME_DESKTOP_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { HOME_DESKTOP_BACKGROUND } from 'constants/backgrounds'
 import { Box, Button } from 'ui/atoms'
 import { LayoutDesktop } from 'ui/layout'
 import { Notice } from 'ui/organisms'
 
 export const HomeDesktop = () => (
-  <LayoutDesktop {...HOME_DESKTOP_LAYOUT_BACKGROUND}>
-    <Notice mb="32px" ml="38px" />
+  <LayoutDesktop {...HOME_DESKTOP_BACKGROUND}>
+    <Notice mt="50px" mb="32px" ml="38px" />
 
     <Box
       as="img"

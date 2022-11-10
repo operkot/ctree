@@ -4,9 +4,55 @@ import { BASE_ERROR_MESSAGE } from 'constants/messages'
 import api from 'api'
 
 const MAPS_MOCK = [
-  { id: 6, chips: 12, type: 1, status: 2 },
-  { id: 30, chips: 12, type: 2, status: 2 },
-  { id: 38, chips: 6, type: 3, status: 1 },
+  {
+    id: 6,
+    id_map: null,
+    chips: 12,
+    type: 1,
+    status: 2,
+  },
+  {
+    id: 30,
+    id_map: null,
+    chips: 12,
+    type: 2,
+    status: 2,
+  },
+  {
+    id: 38,
+    id_map: null,
+    chips: 12,
+    type: 3,
+    status: 2,
+  },
+  {
+    id: 41,
+    id_map: null,
+    chips: 12,
+    type: 1,
+    status: 2,
+  },
+  {
+    id: 42,
+    id_map: null,
+    chips: 12,
+    type: 2,
+    status: 2,
+  },
+  {
+    id: 53,
+    id_map: 1,
+    chips: 12,
+    type: 3,
+    status: 2,
+  },
+  {
+    id: 54,
+    id_map: 2,
+    chips: 0,
+    type: 1,
+    status: 1,
+  },
 ]
 
 const initialState = {
@@ -27,11 +73,13 @@ export const mapsFetch = createAsyncThunk(
         session_id: sessionID,
       })
 
-      return response
-        ? response.island_maps
-        : rejectWithValue(BASE_ERROR_MESSAGE)
+      // return response
+      //   ? response.island_maps
+      //   : rejectWithValue(BASE_ERROR_MESSAGE)
+      return MAPS_MOCK
     } catch (error) {
-      return rejectWithValue(error.message)
+      // return rejectWithValue(error.message)
+      return MAPS_MOCK
     }
   }
 )

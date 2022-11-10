@@ -11,7 +11,7 @@ import { Board, ChipsBox } from 'ui/organisms'
 import { useMapsManager } from 'hooks/useMapsManager'
 import { realizeMapChip } from 'store/slices/mapsSlice'
 
-const AVAIBLE_CHIPS = 12
+const AVAILABLE_CHIPS = 12
 
 export const MapView = () => {
   const dispatch = useDispatch()
@@ -41,7 +41,7 @@ export const MapView = () => {
           onChipDrop={onChipDrop}
         />
 
-        <ChipsBox avaibleChips={AVAIBLE_CHIPS} />
+        <ChipsBox availableChips={AVAILABLE_CHIPS} />
       </DndProvider>
     </LayoutMapMobile>
   )

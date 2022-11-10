@@ -63,9 +63,9 @@ const CHIPS_CAROUSEL_OPTIONS = {
   navigation: { nextEl: '.carousel-next', prevEl: '.carousel-prev' },
 }
 
-const ChipsCarouselContent = ({ avaibleChips }) => (
+const ChipsCarouselContent = ({ availableChips }) => (
   <Swiper {...CHIPS_CAROUSEL_OPTIONS}>
-    {Array.from(Array(avaibleChips).keys()).map((_, key) => (
+    {Array.from(Array(availableChips).keys()).map((_, key) => (
       <SwiperSlide key={key}>
         <BoardChip />
       </SwiperSlide>
@@ -85,14 +85,14 @@ const ChipsCarouselEmptyMessage = () => (
   </Text>
 )
 
-export const ChipsCarousel = ({ avaibleChips }) => (
+export const ChipsCarousel = ({ availableChips }) => (
   <ChipsCarouselWrapper>
     <ChipsCarouselControl className="carousel-prev">
       <img src="/img/angle-left.svg" alt="" />
     </ChipsCarouselControl>
 
-    {avaibleChips > 0 ? (
-      <ChipsCarouselContent avaibleChips={avaibleChips} />
+    {availableChips > 0 ? (
+      <ChipsCarouselContent availableChips={availableChips} />
     ) : (
       <ChipsCarouselEmptyMessage />
     )}

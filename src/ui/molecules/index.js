@@ -1,6 +1,7 @@
 export * from './BoardChip'
 export * from './BoardChipPreview'
 export * from './BoardPoint'
+export * from './ChipsInfo'
 export * from './NoticeItem'
 export * from './Pager'
 export * from './PopupAlert'

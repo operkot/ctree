@@ -1,4 +1,4 @@
-import { CODES_MOBILE_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { WEEKLY_DRAW_MOBILE_BACKGROUND } from 'constants/backgrounds'
 import { Box, Text } from 'ui/atoms'
 import { Pager } from 'ui/molecules'
 import { LayoutMobile } from 'ui/layout'
@@ -26,7 +26,7 @@ const WEEKLY_CODES = [
 ]
 
 export const WeeklyDrawMobile = () => (
-  <LayoutMobile {...CODES_MOBILE_LAYOUT_BACKGROUND}>
+  <LayoutMobile {...WEEKLY_DRAW_MOBILE_BACKGROUND}>
     <LayoutMobile.Header>
       <Box
         as="img"

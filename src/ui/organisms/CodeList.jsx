@@ -22,9 +22,8 @@ const CodesListBody = styled.ul`
   padding-right: 16px;
   padding-left: 16px;
   overflow-y: auto;
-  border-top: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
 
   @media (min-width: 1200px) {
     padding-right: 32px;
@@ -36,6 +35,26 @@ const CodesListBody = styled.ul`
   }
 
   &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  /* &::-webkit-scrollbar {
     width: 8px;
   }
 
@@ -47,7 +66,7 @@ const CodesListBody = styled.ul`
   &::-webkit-scrollbar-thumb {
     background-color: #fff;
     border-radius: 8px;
-  }
+  } */
 `
 
 const CodeListItem = styled.li`

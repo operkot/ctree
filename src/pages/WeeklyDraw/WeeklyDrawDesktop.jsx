@@ -1,4 +1,4 @@
-import { CODES_DESKTOP_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { WEEKLY_DRAW_DESKTOP_BACKGROUND } from 'constants/backgrounds'
 import { Box, Flex, Text } from 'ui/atoms'
 import { NoticeItem } from 'ui/molecules'
 import { LayoutDesktop } from 'ui/layout'
@@ -26,7 +26,7 @@ const WEEKLY_CODES = [
 ]
 
 export const WeeklyDrawDesktop = () => (
-  <LayoutDesktop {...CODES_DESKTOP_LAYOUT_BACKGROUND}>
+  <LayoutDesktop {...WEEKLY_DRAW_DESKTOP_BACKGROUND}>
     <Flex alignItems="center" justifyContent="center" mb="64px">
       <NoticeItem
         variant="warning"

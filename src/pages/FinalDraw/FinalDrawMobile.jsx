@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { CODES_MOBILE_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { FANAL_DRAW_MOBILE_BACKGROUND } from 'constants/backgrounds'
 import { PATHS } from 'routing/paths'
 import { Button, Box, Text } from 'ui/atoms'
 import { Pager } from 'ui/molecules'
@@ -28,7 +28,7 @@ const FINAL_CODES = [
 ]
 
 export const FinalDrawMobile = () => (
-  <LayoutMobile {...CODES_MOBILE_LAYOUT_BACKGROUND}>
+  <LayoutMobile {...FANAL_DRAW_MOBILE_BACKGROUND}>
     <LayoutMobile.Header>
       <Box
         as="img"
