@@ -3,7 +3,6 @@ import { Box, Flex, Text } from 'ui/atoms'
 import { NoticeItem } from 'ui/molecules'
 import { LayoutDesktop } from 'ui/layout'
 import { CodeList } from 'ui/organisms'
-import { flex } from '@xstyled/styled-components'
 
 const WEEKLY_CODES = [
   {
@@ -26,7 +25,7 @@ const WEEKLY_CODES = [
   },
 ]
 
-export const WeeklyLotteryDesktop = () => (
+export const WeeklyDrawDesktop = () => (
   <LayoutDesktop {...CODES_DESKTOP_LAYOUT_BACKGROUND}>
     <Flex alignItems="center" justifyContent="center" mb="64px">
       <NoticeItem

@@ -3,6 +3,6 @@ export const PATHS = {
   RULES: '/rules',
   MAPS: '/maps',
   MAP_VIEW: '/map-view',
-  WEEKLY_LOTTERY: '/weekly-lottery',
+  WEEKLY_DRAW: '/weekly-draw',
   FINAL_DRAW: '/final-draw',
 }

@@ -18,8 +18,14 @@ const MainMenuLink = ({ children }) => (
   </Text>
 )
 
-export const MainMenu = () => (
-  <Box as="ul" divideX={2} divideColor="#419787" style={{ display: 'flex' }}>
+export const MainMenu = props => (
+  <Box
+    as="ul"
+    divideX={2}
+    divideColor="#419787"
+    style={{ display: 'flex' }}
+    {...props}
+  >
     <Box as="li" px="24px">
       <MainMenuLink>Правила</MainMenuLink>
     </Box>

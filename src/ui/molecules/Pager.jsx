@@ -42,8 +42,8 @@ export const Pager = () => {
 
   return (
     <PagerWrapper>
-      <Link to={PATHS.WEEKLY_LOTTERY}>
-        <PagerControl isActive={pathname === PATHS.WEEKLY_LOTTERY}>
+      <Link to={PATHS.WEEKLY_DRAW}>
+        <PagerControl isActive={pathname === PATHS.WEEKLY_DRAW}>
           Еженедельный
         </PagerControl>
       </Link>

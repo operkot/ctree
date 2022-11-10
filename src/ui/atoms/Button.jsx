@@ -22,6 +22,11 @@ const ButtonVariants = ({ theme, variant }) =>
       border-color: ${theme.colors.red[0]};
       color: ${theme.colors.white};
     `,
+    secondary: css`
+      background-color: #419787;
+      border-color: #419787;
+      color: #fff;
+    `,
     outlined: css`
       background-color: transparent;
       border-color: ${theme.colors.white};

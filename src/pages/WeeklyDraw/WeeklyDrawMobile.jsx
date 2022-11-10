@@ -25,7 +25,7 @@ const WEEKLY_CODES = [
   },
 ]
 
-export const WeeklyLotteryMobile = () => (
+export const WeeklyDrawMobile = () => (
   <LayoutMobile {...CODES_MOBILE_LAYOUT_BACKGROUND}>
     <LayoutMobile.Header>
       <Box

@@ -19,7 +19,7 @@ export const HomeDesktop = () => (
     />
 
     <Box maxWidth="400px">
-      <Link to={PATHS.WEEKLY_LOTTERY}>
+      <Link to={PATHS.WEEKLY_DRAW}>
         <Button w="100%" mb="16px" py="18px" fontSize="24px">
           Еженедельный розыгрыш
         </Button>

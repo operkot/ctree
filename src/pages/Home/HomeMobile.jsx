@@ -27,7 +27,7 @@ export const HomeMobile = () => {
         </Box>
 
         <Box maxWidth={{ md: '486px' }}>
-          <Link to={PATHS.WEEKLY_LOTTERY}>
+          <Link to={PATHS.WEEKLY_DRAW}>
             <Button
               as="span"
               w="100%"
