@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-
+import useMatchMedia from 'react-use-match-media'
 import styled from 'styled-components'
 
-import { MAPS_POINTS_POSITION } from 'constants/maps'
+import { WINTER_MAPS_POINTS_POSITION } from 'constants/maps'
 import { BoardChipPreview, BoardPoint } from 'ui/molecules'
 
 const BoardWrapper = styled.div`
@@ -11,6 +11,23 @@ const BoardWrapper = styled.div`
   min-height: 0;
   min-width: 0;
   overflow: auto;
+
+  @media (min-width: 1200px) {
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #419787;
+      border-radius: 8px;
+    }
+  }
 `
 
 const BoardScene = styled.img`
@@ -28,6 +45,9 @@ const BoardScene = styled.img`
 
 const BoardMap = styled.div`
   position: relative;
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
 `
 
 export const Board = ({
@@ -37,6 +57,7 @@ export const Board = ({
 }) => {
   const wrapperRef = useRef(null)
   const [isMapImgLoaded, setIsMapImgLoaded] = useState(false)
+  const isWideViewport = useMatchMedia('(min-width: 768px)')
 
   useEffect(() => {
     renderBoardPoints()
@@ -48,12 +69,12 @@ export const Board = ({
     wrapperRef.current.scrollTop = offsetBottom
   }, [isMapImgLoaded])
 
-  // const mapImage = useMemo(() => {
-  //   return isWideViewport ? `board-${type}` : `board-mobile-${type}`
-  // }, [isWideViewport])
+  const mapImage = useMemo(() => {
+    return isWideViewport ? `board-${mapType}` : `board-mobile-${mapType}`
+  }, [isWideViewport])
 
   const renderBoardPoints = () => {
-    const mapTypePoints = MAPS_POINTS_POSITION[mapType]
+    const mapTypePoints = WINTER_MAPS_POINTS_POSITION[mapType]
 
     if (!mapTypePoints) {
       return null
@@ -75,7 +96,7 @@ export const Board = ({
       <BoardMap>
         <BoardChipPreview />
         <BoardScene
-          src={`img/board-mobile-${mapType}.png`}
+          src={`img/${mapImage}.png`}
           alt=""
           onLoad={() => setIsMapImgLoaded(true)}
         />

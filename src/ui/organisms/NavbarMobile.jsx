@@ -2,9 +2,9 @@ import qs from 'query-string'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 import { PATHS } from 'routing/paths'
-import { Box, Flex } from 'ui/atoms'
+import { Box, Flex, Text } from 'ui/atoms'
 
-export const NavbarMobile = ({ goBackURL = PATHS.HOME }) => {
+export const NavbarMobile = ({ goBackURL = PATHS.HOME, navbarTitle }) => {
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -29,6 +29,18 @@ export const NavbarMobile = ({ goBackURL = PATHS.HOME }) => {
       <Box as="button" w="24px" h="24px" onClick={onBackClick}>
         <img src="img/arrow_back.svg" alt="" />
       </Box>
+
+      {navbarTitle && (
+        <Text
+          fontSize="15px"
+          lineHeight="24px"
+          textAlign="center"
+          letterSpacing="-0.3px"
+          color="#fff"
+        >
+          {navbarTitle}
+        </Text>
+      )}
 
       <Flex>
         <Box as="button" w="24px" h="24px" mr="16px">

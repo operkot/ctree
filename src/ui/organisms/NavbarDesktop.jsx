@@ -16,7 +16,8 @@ const NavbarDesktopMenu = styled(MainMenu)`
 
 export const NavbarDesktop = () => {
   const { pathname } = useLocation()
-  const isHome = !!matchPath({ path: pathname, exact: true }, '/')
+  const isHome = !!matchPath({ path: pathname, exact: true }, PATHS.HOME)
+  const isMapView = !!matchPath({ path: pathname, exact: true }, PATHS.MAP_VIEW)
 
   return (
     <Box py="19px" backgroundColor="rgba(46, 154, 135, 0.5)">
@@ -34,11 +35,13 @@ export const NavbarDesktop = () => {
           </Button>
         )}
 
-        <Flex>
-          <Box as="img" src="img/spar_logo.svg" alt="Spar" mr="48px" />
-          <Box as="img" src="img/semya_logo.svg" alt="Семья" mr="38px" />
-          <Box as="img" src="img/pobeda_logo.svg" alt="Победа" />
-        </Flex>
+        {!isMapView && (
+          <Flex>
+            <Box as="img" src="img/spar_logo.svg" alt="Spar" mr="48px" />
+            <Box as="img" src="img/semya_logo.svg" alt="Семья" mr="38px" />
+            <Box as="img" src="img/pobeda_logo.svg" alt="Победа" />
+          </Flex>
+        )}
 
         <NavbarDesktopMenu />
       </NavbarDesktopContent>

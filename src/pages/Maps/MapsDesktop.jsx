@@ -1,11 +1,11 @@
-import { FINAL_DRAW_DESKTOP_BACKGROUND } from 'constants/backgrounds'
+import { MAPS_DESKTOP_BACKGROUND } from 'constants/backgrounds'
 import { Box, Flex } from 'ui/atoms'
 import { ChipsInfo } from 'ui/molecules'
 import { LayoutDesktop } from 'ui/layout'
 import { MapList } from 'ui/organisms'
 
 export const MapsDesktop = ({ maps }) => (
-  <LayoutDesktop {...FINAL_DRAW_DESKTOP_BACKGROUND}>
+  <LayoutDesktop {...MAPS_DESKTOP_BACKGROUND}>
     <Box
       as="img"
       src="img/maps_title.svg"

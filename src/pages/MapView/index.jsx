@@ -3,21 +3,22 @@ import { useLocation } from 'react-router-dom'
 import { DndProvider } from 'react-dnd'
 import { TouchBackend } from 'react-dnd-touch-backend'
 import { useDispatch } from 'react-redux'
-
-import { MAP_VIEW_LAYOUT_BACKGROUND } from 'constants/backgrounds'
-import { LayoutMapMobile } from 'ui/layout'
-import { Board, ChipsBox } from 'ui/organisms'
+import useMatchMedia from 'react-use-match-media'
 
 import { useMapsManager } from 'hooks/useMapsManager'
 import { realizeMapChip } from 'store/slices/mapsSlice'
 
+import { MapViewMobile } from './MapViewMobile'
+import { MapViewDesktop } from './MapViewDesktop'
+
 const AVAILABLE_CHIPS = 12
 
 export const MapView = () => {
+  const isWideViewport = useMatchMedia('(min-width: 1200px)')
   const dispatch = useDispatch()
   const location = useLocation()
   const { maps } = useMapsManager()
-  const { mapID } = location.state
+  const { mapID, mapTitle } = location.state
 
   const selectedMap = useMemo(() => {
     return maps.filter(map => map.id === Number(mapID))[0]
@@ -33,16 +34,23 @@ export const MapView = () => {
   }
 
   return (
-    <LayoutMapMobile {...MAP_VIEW_LAYOUT_BACKGROUND}>
-      <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
-        <Board
+    <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
+      {isWideViewport ? (
+        <MapViewDesktop
           mapType={selectedMap.type}
           filledPoints={selectedMap.chips}
+          availableChips={AVAILABLE_CHIPS}
           onChipDrop={onChipDrop}
         />
-
-        <ChipsBox availableChips={AVAILABLE_CHIPS} />
-      </DndProvider>
-    </LayoutMapMobile>
+      ) : (
+        <MapViewMobile
+          mapTitle={mapTitle}
+          mapType={selectedMap.type}
+          filledPoints={selectedMap.chips}
+          availableChips={AVAILABLE_CHIPS}
+          onChipDrop={onChipDrop}
+        />
+      )}
+    </DndProvider>
   )
 }

@@ -1,11 +1,3 @@
-export const MAIN_MOBILE_LAYOUT_BACKGROUND = {
-  backgroundImage:
-    'url(img/snow_top_bg.svg), url(img/home_bg.svg), url(img/rays_bg.svg)',
-  backgroundPosition: '0 0, 0 100%, 50% 15%',
-  backgroundRepeat: 'repeat-x, no-repeat, no-repeat',
-  backgroundSize: 'contain, contain, 1658px 1658px',
-}
-
 export const HOME_DESKTOP_BACKGROUND = {
   backgroundImage:
     'url(img/home_bg_sign.svg), url(img/home_bg_santa.svg), url(img/home_bg_desktop.svg), url(img/garland_bg.png), url(img/snow_bg_desktop.svg), url(img/rays_bg_desktop.svg)',
@@ -59,12 +51,26 @@ export const FANAL_DRAW_MOBILE_BACKGROUND = {
   backgroundSize: 'auto, 1658px 1658px',
 }
 
-export const RULES_LAYOUT_BACKGROUND = {
+export const RULES_BACKGROUND = {
   backgroundImage:
     'url(img/snow_top_bg.svg), linear-gradient(180deg, #5fa89b 0%, #83c9bc 100%)',
   backgroundRepeat: 'repeat-x, no-repeat',
 }
 
-export const MAP_VIEW_LAYOUT_BACKGROUND = {
+export const MAPS_MOBILE_BACKGROUND = {
+  backgroundImage:
+    'url(img/snow_top_bg.svg), url(img/home_bg.svg), url(img/rays_bg.svg)',
+  backgroundPosition: '0 0, 0 100%, 50% 15%',
+  backgroundRepeat: 'repeat-x, no-repeat, no-repeat',
+  backgroundSize: 'contain, contain, 1658px 1658px',
+}
+
+export const MAPS_DESKTOP_BACKGROUND = FINAL_DRAW_DESKTOP_BACKGROUND
+
+export const MAP_VIEW_MOBILE_BACKGROUND = {
   backgroundColor: '#52aa9a',
+}
+
+export const MAP_VIEW_DESKTOP_BACKGROUND = {
+  backgroundColor: '#7abdb1',
 }

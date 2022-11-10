@@ -10,7 +10,7 @@ const LayoutMapMobileWrapper = styled(Box)`
   min-height: 480px;
 `
 
-const LayoutMobileContent = styled.div`
+const LayoutMapMobileContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -18,10 +18,10 @@ const LayoutMobileContent = styled.div`
   min-width: 0;
 `
 
-export const LayoutMapMobile = ({ children, ...props }) => (
+export const LayoutMapMobile = ({ children, navbarTitle, ...props }) => (
   <LayoutMapMobileWrapper {...props}>
-    <NavbarMobile />
+    <NavbarMobile navbarTitle={navbarTitle} />
 
-    <LayoutMobileContent>{children}</LayoutMobileContent>
+    <LayoutMapMobileContent>{children}</LayoutMapMobileContent>
   </LayoutMapMobileWrapper>
 )

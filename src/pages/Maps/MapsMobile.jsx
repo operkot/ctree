@@ -1,4 +1,4 @@
-import { MAIN_MOBILE_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { MAPS_MOBILE_BACKGROUND } from 'constants/backgrounds'
 import { Box, Text } from 'ui/atoms'
 import { ChipsInfo } from 'ui/molecules'
 import { LayoutMobile } from 'ui/layout'
@@ -6,7 +6,7 @@ import { MapList } from 'ui/organisms'
 
 export const MapsMobile = ({ maps }) => {
   return (
-    <LayoutMobile {...MAIN_MOBILE_LAYOUT_BACKGROUND}>
+    <LayoutMobile {...MAPS_MOBILE_BACKGROUND}>
       <LayoutMobile.Header mb="24px">
         <Box
           as="img"

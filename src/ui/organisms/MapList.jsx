@@ -109,7 +109,10 @@ export const MapList = ({ maps }) => {
       <MapListContent>
         {maps.map((unit, idx) => (
           <MapListItem key={idx}>
-            <MapsListLink to={PATHS.MAP_VIEW} state={{ mapID: unit.id }} />
+            <MapsListLink
+              to={PATHS.MAP_VIEW}
+              state={{ mapID: unit.id, mapTitle: `Карта №${idx + 1}` }}
+            />
 
             <Text
               fontWeight="700"

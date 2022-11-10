@@ -1,9 +1,9 @@
-import { RULES_LAYOUT_BACKGROUND } from 'constants/backgrounds'
+import { RULES_BACKGROUND } from 'constants/backgrounds'
 import { Text } from 'ui/atoms'
 import { LayoutMobile } from 'ui/layout'
 
 export const Rules = () => (
-  <LayoutMobile {...RULES_LAYOUT_BACKGROUND}>
+  <LayoutMobile {...RULES_BACKGROUND}>
     <LayoutMobile.Content>
       <Text
         as="h1"

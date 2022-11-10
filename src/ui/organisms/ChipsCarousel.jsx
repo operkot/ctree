@@ -23,7 +23,7 @@ const ChipsCarouselControl = styled.button`
   width: 30px;
   height: 68px;
   border-radius: 8px;
-  background-color: #2a95b8;
+  background-color: #419787;
   fill: #fff;
 
   &.carousel-prev {
