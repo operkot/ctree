@@ -1,6 +1,3 @@
-import { Link } from 'react-router-dom'
-
-import { PATHS } from 'routing/paths'
 import { Box, Text } from 'ui/atoms'
 
 const MainMenuLink = ({ children }) => (

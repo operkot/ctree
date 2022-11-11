@@ -2,20 +2,8 @@ import styled, { css } from 'styled-components'
 
 import { Box, Text } from 'ui/atoms'
 
-const NoticeItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 84px;
-
-  &:not(:last-child) {
-    margin-right: 24px;
-  }
-`
-
 const NoticeItemDispaly = styled.div`
   position: relative;
-  /* z-index: 0; */
   display: flex;
   flex-direction: column;
   align-items: center;

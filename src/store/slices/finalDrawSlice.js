@@ -31,6 +31,25 @@ export const finalDrawCodesFetch = createAsyncThunk(
   }
 )
 
+export const finalDrawCodesRealize = createAsyncThunk(
+  'finalDraw/codesRealize',
+  async (_, { getState, rejectWithValue }) => {
+    const state = getState()
+    const { sessionID, userID } = state.user
+
+    try {
+      const response = await api.finalDraw.realize({
+        user_id: userID,
+        session_id: sessionID,
+      })
+
+      return response ? state.user.data : rejectWithValue(BASE_ERROR_MESSAGE)
+    } catch (error) {
+      return rejectWithValue(error.message)
+    }
+  }
+)
+
 export const finalDrawSlice = createSlice({
   name: 'finalDraw',
   initialState,

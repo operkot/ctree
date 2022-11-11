@@ -1,12 +1,10 @@
-import { Button, Text } from 'ui/atoms'
+import { Button, Confetti, Text } from 'ui/atoms'
 import { PopupInfo } from 'ui/molecules'
 
-export const PopupCodeRegSuccess = ({
-  title = 'Коды успешно зарегистрированы!',
-  isOpened,
-  onClose,
-}) => (
+export const PopupFinalCode = ({ isOpened, onClose, onSubmitClick }) => (
   <PopupInfo isOpened={isOpened} onClose={onClose}>
+    <Confetti />
+
     <Text
       mb="32px"
       fontSize="20px"
@@ -16,10 +14,10 @@ export const PopupCodeRegSuccess = ({
       textAlign="center"
       color="white"
     >
-      {title}
+      Ты получил код для финального розыгрыша!
     </Text>
 
-    <Button w="100%" onClick={onClose}>
+    <Button w="100%" onClick={onSubmitClick}>
       Отлично!
     </Button>
   </PopupInfo>

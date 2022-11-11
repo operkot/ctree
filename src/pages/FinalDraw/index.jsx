@@ -20,8 +20,6 @@ export const FinalDraw = () => {
 
   const { finalDrawCodes, isLoading, error } = useFinalDrawManager()
 
-  console.log(finalDrawCodes)
-
   useEffect(() => {
     if (chips > 0) {
       onPopupChipsRealizeOpen()

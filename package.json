@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@xstyled/styled-components": "^3.7.0",
     "axios": "^1.1.3",
+    "canvas-confetti": "^1.6.0",
     "dayjs": "^1.11.6",
     "query-string": "^7.1.1",
     "ramda": "^0.28.0",

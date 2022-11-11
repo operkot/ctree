@@ -1,33 +1,74 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { DndProvider } from 'react-dnd'
 import { TouchBackend } from 'react-dnd-touch-backend'
-import { useDispatch } from 'react-redux'
 import useMatchMedia from 'react-use-match-media'
+import { useNavigate } from 'react-router-dom'
 
+import { PATHS } from 'routing/paths'
+import { usePopupState } from 'hooks/usePopupState'
 import { useMapsManager } from 'hooks/useMapsManager'
-import { realizeMapChip } from 'store/slices/mapsSlice'
+import { useCouponCountManager } from 'hooks/useCouponCountManager'
+import { useFinalDrawManager } from 'hooks/useFinalDrawManager'
 
+// import { realizeMapChip } from 'store/slices/mapsSlice'
+
+import { PopupFinalCode, PopupBasicError } from 'ui/organisms'
 import { MapViewMobile } from './MapViewMobile'
 import { MapViewDesktop } from './MapViewDesktop'
 
-const AVAILABLE_CHIPS = 12
-
 export const MapView = () => {
+  const [isBoardLoading, setBoardLoading] = useState(false)
   const isWideViewport = useMatchMedia('(min-width: 1200px)')
-  const dispatch = useDispatch()
+  const { chips, fetchCouponCount } = useCouponCountManager()
+  const { realizeChip } = useFinalDrawManager()
   const location = useLocation()
-  const { maps } = useMapsManager()
+  const { maps, fetchMaps } = useMapsManager()
   const { mapID, mapTitle } = location.state
+  const navigate = useNavigate()
+
+  const {
+    isOpen: isPopupFinalCodeOpen,
+    onOpen: onPopupFinalCodeOpen,
+    onClose: onPopupFinalCodeClose,
+  } = usePopupState()
+
+  const {
+    isOpen: isPopupErrorOpen,
+    onOpen: onPopupErrorCodeOpen,
+    onClose: onPopupErrorCodeClose,
+  } = usePopupState()
 
   const selectedMap = useMemo(() => {
     return maps.filter(map => map.id === Number(mapID))[0]
   }, [maps, mapID])
 
-  const onChipDrop = () => {
-    console.log('Chip dropped on the board!')
-    dispatch(realizeMapChip(mapID))
+  const onChipDrop = async () => {
+    setBoardLoading(true)
+
+    try {
+      // setTimeout(() => {
+      //   dispatch(realizeMapChip(mapID))
+      //   setBoardLoading(false)
+      // }, 2000)
+
+      await realizeChip().unwrap()
+
+      if (selectedMap.chips === 11) {
+        onPopupFinalCodeOpen()
+      }
+
+      await fetchMaps().unwrap()
+      await fetchCouponCount().unwrap()
+
+      setBoardLoading(false)
+    } catch (error) {
+      setBoardLoading(false)
+      onPopupErrorCodeOpen()
+    }
   }
+
+  const onPopupFinalCodeSubmit = () => navigate(PATHS.FINAL_DRAW)
 
   if (!selectedMap) {
     return null
@@ -39,7 +80,8 @@ export const MapView = () => {
         <MapViewDesktop
           mapType={selectedMap.type}
           filledPoints={selectedMap.chips}
-          availableChips={AVAILABLE_CHIPS}
+          availableChips={chips}
+          isBoardLoading={isBoardLoading}
           onChipDrop={onChipDrop}
         />
       ) : (
@@ -47,10 +89,21 @@ export const MapView = () => {
           mapTitle={mapTitle}
           mapType={selectedMap.type}
           filledPoints={selectedMap.chips}
-          availableChips={AVAILABLE_CHIPS}
+          availableChips={chips}
+          isBoardLoading={isBoardLoading}
           onChipDrop={onChipDrop}
         />
       )}
+
+      <PopupFinalCode
+        isOpened={isPopupFinalCodeOpen}
+        onClose={onPopupFinalCodeClose}
+        onSubmitClick={onPopupFinalCodeSubmit}
+      />
+      <PopupBasicError
+        isOpened={isPopupErrorOpen}
+        onClose={onPopupErrorCodeClose}
+      />
     </DndProvider>
   )
 }

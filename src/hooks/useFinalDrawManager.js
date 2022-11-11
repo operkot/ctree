@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { finalDrawCodesFetch } from 'store/slices/finalDrawSlice'
+import {
+  finalDrawCodesFetch,
+  finalDrawCodesRealize,
+} from 'store/slices/finalDrawSlice'
 import {
   selectFinalDrawData,
   selectFinalDrawLoading,
@@ -16,9 +19,11 @@ export const useFinalDrawManager = () => {
 
   const fetchFinalCodes = () => dispatch(finalDrawCodesFetch())
 
+  const realizeChip = () => dispatch(finalDrawCodesRealize())
+
   useEffect(() => {
     fetchFinalCodes()
   }, [])
 
-  return { fetchFinalCodes, finalDrawCodes, isLoading, error }
+  return { fetchFinalCodes, finalDrawCodes, isLoading, error, realizeChip }
 }

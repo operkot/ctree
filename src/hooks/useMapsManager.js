@@ -9,9 +9,11 @@ export const useMapsManager = () => {
   const error = useSelector(state => state.maps.error)
   const dispatch = useDispatch()
 
+  const fetchMaps = () => dispatch(mapsFetch())
+
   useEffect(() => {
-    dispatch(mapsFetch())
+    fetchMaps()
   }, [])
 
-  return { maps, isLoading, error }
+  return { maps, isLoading, error, fetchMaps }
 }

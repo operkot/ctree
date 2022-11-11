@@ -3,6 +3,7 @@ import useMatchMedia from 'react-use-match-media'
 import styled from 'styled-components'
 
 import { WINTER_MAPS_POINTS_POSITION } from 'constants/maps'
+import { Preloader } from 'ui/atoms'
 import { BoardChipPreview, BoardPoint } from 'ui/molecules'
 
 const BoardWrapper = styled.div`
@@ -30,6 +31,21 @@ const BoardWrapper = styled.div`
   }
 `
 
+const BoardPreloader = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: ${props => (props.isVisible ? 1 : 0)};
+  pointer-events: ${props => (props.isVisible ? 'all' : 'none')};
+`
+
 const BoardScene = styled.img`
   @media (min-width: 768px) {
     min-width: 1093px;
@@ -53,6 +69,7 @@ const BoardMap = styled.div`
 export const Board = ({
   mapType = 1,
   filledPoints = 0,
+  isBoardLoading = false,
   onChipDrop = () => {},
 }) => {
   const wrapperRef = useRef(null)
@@ -93,6 +110,10 @@ export const Board = ({
 
   return (
     <BoardWrapper ref={wrapperRef}>
+      <BoardPreloader isVisible={isBoardLoading}>
+        <Preloader size="82px" dotSize="14px" color="#fff" margin="0 auto" />
+      </BoardPreloader>
+
       <BoardMap>
         <BoardChipPreview />
         <BoardScene

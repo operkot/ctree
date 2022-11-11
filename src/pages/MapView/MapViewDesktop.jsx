@@ -6,12 +6,14 @@ export const MapViewDesktop = ({
   mapType,
   filledPoints,
   availableChips,
+  isBoardLoading,
   onChipDrop,
 }) => (
   <LayoutMapDesktop {...MAP_VIEW_DESKTOP_BACKGROUND}>
     <Board
       mapType={mapType}
       filledPoints={filledPoints}
+      isBoardLoading={isBoardLoading}
       onChipDrop={onChipDrop}
     />
 

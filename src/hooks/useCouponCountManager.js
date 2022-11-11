@@ -17,9 +17,11 @@ export const useCouponCountManager = () => {
   const coupons = couponcount.Count
   const chips = couponcount?.IslandManzanaCouponCount
 
+  const fetchCouponCount = () => dispatch(couponCountFetch())
+
   useEffect(() => {
-    dispatch(couponCountFetch())
+    fetchCouponCount()
   }, [])
 
-  return { coupons, chips, couponcount, isLoading, error }
+  return { coupons, chips, couponcount, isLoading, error, fetchCouponCount }
 }
