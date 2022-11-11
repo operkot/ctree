@@ -25,7 +25,7 @@ const WEEKLY_CODES = [
   },
 ]
 
-export const WeeklyDrawMobile = () => (
+export const WeeklyDrawMobile = ({ weeklyDrawCodes, isLoading, error }) => (
   <LayoutMobile {...WEEKLY_DRAW_MOBILE_BACKGROUND}>
     <LayoutMobile.Header>
       <Box
@@ -53,7 +53,11 @@ export const WeeklyDrawMobile = () => (
     </LayoutMobile.Header>
 
     <LayoutMobile.Content>
-      <CodeList codes={WEEKLY_CODES} />
+      <CodeList
+        codes={weeklyDrawCodes}
+        isLoading={isLoading}
+        hasError={error}
+      />
     </LayoutMobile.Content>
   </LayoutMobile>
 )

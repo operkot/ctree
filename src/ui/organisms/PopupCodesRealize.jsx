@@ -1,7 +1,12 @@
 import { Box, Button, Text } from 'ui/atoms'
 import { PopupInfo } from 'ui/molecules'
 
-export const PopupCodesRealize = ({ isOpened, onClose }) => (
+export const PopupCodesRealize = ({
+  coupons,
+  isOpened,
+  onClose,
+  onCouponsRealize,
+}) => (
   <PopupInfo isOpened={isOpened} onClose={onClose} hasCloseBtn>
     <Text
       mb="16px"
@@ -32,10 +37,12 @@ export const PopupCodesRealize = ({ isOpened, onClose }) => (
         textAlign="center"
         color="white"
       >
-        Коды: 2
+        Коды: {coupons}
       </Text>
     </Box>
 
-    <Button w="100%">Зарегистировать</Button>
+    <Button w="100%" onClick={onCouponsRealize}>
+      Зарегистировать
+    </Button>
   </PopupInfo>
 )

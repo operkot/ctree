@@ -1,7 +1,11 @@
 import { Box, Button, Text } from 'ui/atoms'
 import { PopupInfo } from 'ui/molecules'
 
-export const PopupCodeRegSuccess = ({ isOpened, onClose }) => (
+export const PopupCodeRegSuccess = ({
+  title = 'Коды успешно зарегистрированы!',
+  isOpened,
+  onClose,
+}) => (
   <PopupInfo isOpened={isOpened} onClose={onClose}>
     <Text
       mb="32px"
@@ -12,7 +16,7 @@ export const PopupCodeRegSuccess = ({ isOpened, onClose }) => (
       textAlign="center"
       color="white"
     >
-      Код успешно зарегистрирован!
+      {title}
     </Text>
 
     <Button w="100%" onClick={onClose}>

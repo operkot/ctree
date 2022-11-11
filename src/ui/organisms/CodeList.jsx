@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import styled from 'styled-components'
 
+import { weekDatesRange } from 'utils/date'
 import { Box, Text } from 'ui/atoms'
 
 const CodeListWrapper = styled(Box)`
@@ -53,20 +54,6 @@ const CodesListBody = styled.ul`
     border-radius: 8px;
     background-color: #fff;
   }
-
-  /* &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #fff;
-    border-radius: 8px;
-  } */
 `
 
 const CodeListItem = styled.li`
@@ -78,7 +65,11 @@ const CodeListItem = styled.li`
   }
 `
 
-export const CodeList = ({ codes = [], ...props }) => {
+export const CodeList = ({ codes = [], isLoading, hasError, ...props }) => {
+  if (isLoading || !codes.length) {
+    return null
+  }
+
   return (
     <CodeListWrapper {...props}>
       <CodesListBody>
@@ -93,7 +84,7 @@ export const CodeList = ({ codes = [], ...props }) => {
                   textAlign="center"
                   color="#fff"
                 >
-                  {unit.week}
+                  {weekDatesRange(unit.week)}
                 </Text>
               </CodeListItem>
             )}

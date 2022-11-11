@@ -25,7 +25,7 @@ const WEEKLY_CODES = [
   },
 ]
 
-export const WeeklyDrawDesktop = () => (
+export const WeeklyDrawDesktop = ({ weeklyDrawCodes, isLoading, error }) => (
   <LayoutDesktop {...WEEKLY_DRAW_DESKTOP_BACKGROUND}>
     <Flex alignItems="center" justifyContent="center" mb="64px">
       <NoticeItem
@@ -74,7 +74,11 @@ export const WeeklyDrawDesktop = () => (
       minWidth="0"
       style={{ flexGrow: 1 }}
     >
-      <CodeList codes={WEEKLY_CODES} />
+      <CodeList
+        codes={weeklyDrawCodes}
+        isLoading={isLoading}
+        hasError={error}
+      />
     </Box>
   </LayoutDesktop>
 )

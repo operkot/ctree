@@ -24,7 +24,12 @@ export const couponCountFetch = createAsyncThunk(
         session_id: sessionID,
       })
 
-      return response ? response : rejectWithValue(BASE_ERROR_MESSAGE)
+      return response
+        ? {
+            Count: 10,
+            IslandManzanaCouponCount: 0,
+          }
+        : rejectWithValue(BASE_ERROR_MESSAGE)
     } catch (error) {
       return rejectWithValue(error?.message || BASE_ERROR_MESSAGE)
     }
