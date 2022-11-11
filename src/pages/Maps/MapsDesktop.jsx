@@ -28,5 +28,14 @@ export const MapsDesktop = ({ maps }) => (
 
       <MapList maps={maps} />
     </Flex>
+
+    <Box
+      as="img"
+      src="img/sphere_bg.svg"
+      position="absolute"
+      bottom="0"
+      left="50%"
+      ml="-137px"
+    />
   </LayoutDesktop>
 )

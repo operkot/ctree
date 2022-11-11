@@ -2,6 +2,7 @@ import qs from 'query-string'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 import { PATHS } from 'routing/paths'
+import { getNavLinkBasedOnLocation } from 'utils/navigation'
 import { Box, Flex, Text } from 'ui/atoms'
 
 export const NavbarMobile = ({ goBackURL = PATHS.HOME, navbarTitle }) => {
@@ -20,7 +21,7 @@ export const NavbarMobile = ({ goBackURL = PATHS.HOME, navbarTitle }) => {
     }
 
     if (!isHome) {
-      navigate({ pathname: goBackURL })
+      navigate({ pathname: getNavLinkBasedOnLocation(location.pathname) })
     }
   }
 

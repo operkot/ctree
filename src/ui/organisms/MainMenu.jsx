@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
+import { PATHS } from 'routing/paths'
 import { Box, Text } from 'ui/atoms'
 
-const MainMenuLink = ({ children }) => (
+const MainMenuLinkContent = ({ children }) => (
   <Text
-    as="a"
     href="#"
     fontWeight="700"
     fontSize="18px"
@@ -24,10 +26,14 @@ export const MainMenu = props => (
     {...props}
   >
     <Box as="li" px="24px">
-      <MainMenuLink>Правила</MainMenuLink>
+      <Link to={PATHS.RULES}>
+        <MainMenuLinkContent>Правила</MainMenuLinkContent>
+      </Link>
     </Box>
     <Box as="li" px="24px">
-      <MainMenuLink>Победители</MainMenuLink>
+      <a href="#">
+        <MainMenuLinkContent>Победители</MainMenuLinkContent>
+      </a>
     </Box>
   </Box>
 )

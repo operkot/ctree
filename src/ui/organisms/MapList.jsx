@@ -7,7 +7,7 @@ import { MAP_STATUS } from 'constants/maps'
 import { Text } from 'ui/atoms'
 
 const MapListWrapper = styled.div`
-  max-height: 100%;
+  max-height: 264px;
   overflow: hidden;
   overflow-y: auto;
   flex-grow: 1;

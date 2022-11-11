@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { useLocation, matchPath } from 'react-router-dom'
+import { Link, useLocation, matchPath } from 'react-router-dom'
 
 import { PATHS } from 'routing/paths'
+import { getNavLinkBasedOnLocation } from 'utils/navigation'
 import { Box, Button, Container, Flex } from 'ui/atoms'
 import { MainMenu } from 'ui/organisms'
 
@@ -23,16 +24,19 @@ export const NavbarDesktop = () => {
     <Box py="19px" backgroundColor="rgba(46, 154, 135, 0.5)">
       <NavbarDesktopContent>
         {!isHome && (
-          <Button
-            variant="secondary"
-            mr="42px"
-            px="16px"
-            py="6px"
-            borderRadius="12px"
-          >
-            <Box as="img" src="img/nav-left.svg" alt="" mr="12px" />
-            Назад
-          </Button>
+          <Link to={getNavLinkBasedOnLocation(pathname)}>
+            <Button
+              as="div"
+              variant="secondary"
+              mr="42px"
+              px="16px"
+              py="6px"
+              borderRadius="12px"
+            >
+              <Box as="img" src="img/nav-left.svg" alt="" mr="12px" />
+              Назад
+            </Button>
+          </Link>
         )}
 
         {!isMapView && (
