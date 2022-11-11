@@ -96,7 +96,7 @@ export const Board = ({
       <BoardMap>
         <BoardChipPreview />
         <BoardScene
-          src={`img/${mapImage}.png`}
+          src={`img/${mapImage}.jpg`}
           alt=""
           onLoad={() => setIsMapImgLoaded(true)}
         />
