@@ -26,7 +26,7 @@ const FINAL_CODES = [
   },
 ]
 
-export const FinalDrawDesktop = () => (
+export const FinalDrawDesktop = ({ finalDrawCodes, isLoading, error }) => (
   <LayoutDesktop {...FINAL_DRAW_DESKTOP_BACKGROUND}>
     <Box
       w="100%"
@@ -79,7 +79,13 @@ export const FinalDrawDesktop = () => (
       minWidth="0"
       style={{ flexGrow: 1 }}
     >
-      <CodeList codes={FINAL_CODES} mb="18px" maxHeight="232px" />
+      <CodeList
+        codes={finalDrawCodes}
+        isLoading={isLoading}
+        error={error}
+        mb="18px"
+        maxHeight="232px"
+      />
 
       <Link to={PATHS.MAPS}>
         <Button variant="primary" w="100%" py="13px">

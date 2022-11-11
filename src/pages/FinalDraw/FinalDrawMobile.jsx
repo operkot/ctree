@@ -27,7 +27,7 @@ const FINAL_CODES = [
   },
 ]
 
-export const FinalDrawMobile = () => (
+export const FinalDrawMobile = ({ finalDrawCodes, isLoading, error }) => (
   <LayoutMobile {...FANAL_DRAW_MOBILE_BACKGROUND}>
     <LayoutMobile.Header>
       <Box
@@ -55,7 +55,12 @@ export const FinalDrawMobile = () => (
     </LayoutMobile.Header>
 
     <LayoutMobile.Content>
-      <CodeList codes={FINAL_CODES} mb="28px" />
+      <CodeList
+        codes={finalDrawCodes}
+        isLoading={isLoading}
+        error={error}
+        mb="28px"
+      />
 
       <Link to={PATHS.MAPS}>
         <Button variant="primary" w="100%" py="13px">

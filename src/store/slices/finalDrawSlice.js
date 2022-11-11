@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import { BASE_ERROR_MESSAGE } from 'constants/messages'
 import api from 'api'
+import { normalizeFinalDrawResp } from 'utils/finalDraw'
 
 const initialState = {
   data: null,
@@ -21,7 +22,9 @@ export const finalDrawCodesFetch = createAsyncThunk(
         session_id: sessionID,
       })
 
-      return response ? response : rejectWithValue(BASE_ERROR_MESSAGE)
+      return response
+        ? normalizeFinalDrawResp(response)
+        : rejectWithValue(BASE_ERROR_MESSAGE)
     } catch (error) {
       return rejectWithValue(error.message)
     }

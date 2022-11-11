@@ -66,7 +66,7 @@ const CodeListItem = styled.li`
 `
 
 export const CodeList = ({ codes = [], isLoading, hasError, ...props }) => {
-  if (isLoading || !codes.length) {
+  if (isLoading || !codes || !codes.length) {
     return null
   }
 

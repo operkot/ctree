@@ -23,24 +23,24 @@ export const WeeklyDraw = () => {
   } = useWeeklyDrawManager()
   const { coupons } = useCouponCountManager()
   const {
-    isOpen: isRealizeCouponsPopupOnen,
-    onOpen: onRealizeCouponsPopupOnen,
+    isOpen: isRealizeCouponsPopupOpen,
+    onOpen: onRealizeCouponsPopupOpen,
     onClose: onRealizeCouponsPopupClose,
   } = usePopupState()
   const {
-    isOpen: isRealizeSuccessPopupOnen,
-    onOpen: onRealizeSuccessPopupOnen,
+    isOpen: isRealizeSuccessPopupOpen,
+    onOpen: onRealizeSuccessPopupOpen,
     onClose: onRealizeSuccessPopupClose,
   } = usePopupState()
   const {
-    isOpen: isRealizeFailPopupOnen,
-    onOpen: onRealizeFailPopupOnen,
+    isOpen: isRealizeFailPopupOpen,
+    onOpen: onRealizeFailPopupOpen,
     onClose: onRealizeFailPopupClose,
   } = usePopupState()
 
   useEffect(() => {
     if (coupons > 0) {
-      onRealizeCouponsPopupOnen()
+      onRealizeCouponsPopupOpen()
     }
   }, [coupons])
 
@@ -50,10 +50,10 @@ export const WeeklyDraw = () => {
 
       fetchWeeklyCodes()
       onRealizeCouponsPopupClose()
-      onRealizeSuccessPopupOnen()
+      onRealizeSuccessPopupOpen()
     } catch (error) {
       onRealizeCouponsPopupClose()
-      onRealizeFailPopupOnen()
+      onRealizeFailPopupOpen()
     }
   }
 
@@ -73,18 +73,18 @@ export const WeeklyDraw = () => {
         />
       )}
       <PopupCodesRealize
-        isOpened={isRealizeCouponsPopupOnen}
+        isOpened={isRealizeCouponsPopupOpen}
         onClose={onRealizeCouponsPopupClose}
         coupons={coupons}
         onCouponsRealize={onCouponsRealize}
       />
       <PopupCodeRegSuccess
-        isOpened={isRealizeSuccessPopupOnen}
+        isOpened={isRealizeSuccessPopupOpen}
         onClose={onRealizeSuccessPopupClose}
       />
       <PopupAlert
         message={WEEKLY_DRAW_REALIZE_FAIL_MESSAGE}
-        isOpened={isRealizeFailPopupOnen}
+        isOpened={isRealizeFailPopupOpen}
         onClose={onRealizeFailPopupClose}
       />
     </Fragment>

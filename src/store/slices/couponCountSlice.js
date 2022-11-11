@@ -27,7 +27,7 @@ export const couponCountFetch = createAsyncThunk(
       return response
         ? {
             Count: 10,
-            IslandManzanaCouponCount: 0,
+            IslandManzanaCouponCount: 12,
           }
         : rejectWithValue(BASE_ERROR_MESSAGE)
     } catch (error) {

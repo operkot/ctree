@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom'
+
+import { PATHS } from 'routing/paths'
 import { Box, Button, Text } from 'ui/atoms'
 import { PopupInfo } from 'ui/molecules'
 
-export const PopupChipsRealize = ({ isOpened, onClose }) => (
+export const PopupChipsRealize = ({ chips = 0, isOpened, onClose }) => (
   <PopupInfo isOpened={isOpened} onClose={onClose} hasCloseBtn>
     <Text
       mb="16px"
@@ -32,10 +35,14 @@ export const PopupChipsRealize = ({ isOpened, onClose }) => (
         textAlign="center"
         color="white"
       >
-        Фишки: 10
+        Фишки: {chips}
       </Text>
     </Box>
 
-    <Button w="100%">Вклеить фишки</Button>
+    <Link to={PATHS.MAPS}>
+      <Button as="span" w="100%">
+        Вклеить фишки
+      </Button>
+    </Link>
   </PopupInfo>
 )
