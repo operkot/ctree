@@ -12,14 +12,14 @@ const initialState = {
   error: null,
 }
 
-export const weeklyCodesFetch = createAsyncThunk(
-  'weeklyCodes/fetch',
+export const weeklyDrawFetch = createAsyncThunk(
+  'weeklyDraw/fetch',
   async (_, { rejectWithValue, getState }) => {
     const state = getState()
     const { sessionID, userID } = state.user
 
     try {
-      const response = await api.weeklyCodes.fetch({
+      const response = await api.weeklyDraw.fetch({
         user_id: userID,
         session_id: sessionID,
       })
@@ -31,14 +31,14 @@ export const weeklyCodesFetch = createAsyncThunk(
   }
 )
 
-export const weeklyCodesRealize = createAsyncThunk(
-  'weeklyCodes/realize',
+export const weeklyDrawRealize = createAsyncThunk(
+  'weeklyDraw/realize',
   async (_, { rejectWithValue, getState }) => {
     const state = getState()
     const { sessionID, userID } = state.user
 
     try {
-      const response = await api.weeklyCodes.realize({
+      const response = await api.weeklyDraw.realize({
         user_id: userID,
         session_id: sessionID,
       })
@@ -52,35 +52,35 @@ export const weeklyCodesRealize = createAsyncThunk(
   }
 )
 
-export const weeklyCodesSlice = createSlice({
-  name: 'weeklyCodes',
+export const weeklyDrawSlice = createSlice({
+  name: 'weeklyDraw',
   initialState,
   extraReducers: {
-    [weeklyCodesFetch.pending]: state => {
+    [weeklyDrawFetch.pending]: state => {
       state.loading = true
     },
-    [weeklyCodesFetch.fulfilled]: (state, { payload }) => {
+    [weeklyDrawFetch.fulfilled]: (state, { payload }) => {
       state.loading = false
       state.data = payload
       state.error = null
     },
-    [weeklyCodesFetch.rejected]: (state, { payload }) => {
+    [weeklyDrawFetch.rejected]: (state, { payload }) => {
       state.loading = false
       state.error = payload
     },
-    [weeklyCodesRealize.pending]: state => {
+    [weeklyDrawRealize.pending]: state => {
       state.loading = true
     },
-    [weeklyCodesRealize.fulfilled]: (state, { payload }) => {
+    [weeklyDrawRealize.fulfilled]: (state, { payload }) => {
       state.loading = false
       state.data = payload
       state.error = null
     },
-    [weeklyCodesRealize.rejected]: (state, { payload }) => {
+    [weeklyDrawRealize.rejected]: (state, { payload }) => {
       state.loading = false
       state.error = payload
     },
   },
 })
 
-export default weeklyCodesSlice.reducer
+export default weeklyDrawSlice.reducer

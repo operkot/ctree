@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Text } from 'ui/atoms'
 import { PopupInfo } from 'ui/molecules'
 
-export const PopupReminder = ({ isOpened, onClose }) => (
+export const PopupReminder = ({ chips, coupons, isOpened, onClose }) => (
   <PopupInfo isOpened={isOpened} onClose={onClose}>
     <Text
       mb="16px"
@@ -33,7 +33,7 @@ export const PopupReminder = ({ isOpened, onClose }) => (
           textAlign="center"
           color="white"
         >
-          Коды: 2
+          Коды: {coupons}
         </Text>
       </Box>
       <Box w="50%">
@@ -53,7 +53,7 @@ export const PopupReminder = ({ isOpened, onClose }) => (
           textAlign="center"
           color="white"
         >
-          Фишки: 10
+          Фишки: {chips}
         </Text>
       </Box>
     </Flex>

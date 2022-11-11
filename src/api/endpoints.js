@@ -6,6 +6,4 @@ export const ENDPOINTS = {
   COUPONREALIZE_FINAL: '/couponrealize-final',
   FINALLIST: '/finallist',
   MAPS: '/maps',
-  REGISTER_PROMOCODE: 'register-promocode',
-  REGISTER_FINALCODE: 'register-finalcode',
 }
